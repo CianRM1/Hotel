@@ -1,0 +1,283 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* main styling */
+
+html,body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7em;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  padding-bottom: 20px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+/* utility classes (classes that will be used throughout the site (not specific to any area), see belwo for reasoning */
+
+.container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.text-primary {
+  color: #f7c08a;
+}
+
+.lead {
+  font-size: 20px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  background: #333;
+  padding: 13px 20px;
+  border: none;
+  /* buttons by default have borders but links don't, same with cursors */
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #f7c08a;
+  color: #333;
+}
+
+.btn-light {
+  background: #f4f4f4;
+  color: #333;
+}
+/* navbar */
+/* over flow: auto; --- so background shows no matter what */
+#navbar {
+  background: #333;
+  color: #fff;
+  overflow: auto;
+}
+/* no color in text because they are links, you have to add colour specifically to links -- see below */
+#navbar a {
+  color: white;
+}
+
+#navbar h1 {
+  float: left;
+  padding-top: 20px;
+}
+
+#navbar ul {
+  list-style: none;
+  float: right;
+}
+/* links are vertical on the right -- want horizontal, see below */
+#navbar ul li {
+  float: left;
+}
+
+#navbar ul li a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+/* want any page on to have the above effect so add class to each html (see html files, class= "current"*/
+#navbar ul li a:hover, #navbar ul li a.current {
+  background: #444;
+  color: #f7c08a;
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.bg-primary {
+  background: #f7c08a;
+  color: #333;
+}
+
+.clr {
+  clear: both;
+}
+
+.l-heading {
+  font-size: 40px;
+}
+/* Padding */
+/* py- is for y axis (padding for top and bottom) */
+/* add into html class for padding at top and bottom rather than doing individually */
+/* cleaner to do individual padding to  */
+.py-1 { padding: 10px 0; }
+.py-2 { padding: 20px 0; }
+.py-3 { padding: 30px 0; }
+
+/* want black bar across but home, about, contact in the middle -- need to create new class of container, see html */
+
+
+
+/* Styles for showcase */
+
+#showcase {
+  /* double dot (..) means going outside of current file */
+  background: url('../img/pexels-boonkong-boonpeng-1134176.jpg') no-repeat center center/cover;
+  /* no repeat center center to position and cover to fill */
+  height: 800px;
+}
+
+#showcase .showcase-content {
+  color: #333;
+  text-align: center;
+  padding-top: 0px;
+}
+
+#showcase .showcase-content h1 {
+  font-size: 60px;
+  line-height: 1.2em;
+}
+
+#showcase .showcase-content p {
+  padding-bottom: 40px;
+  line-height: 1.7em;
+}
+
+/* Home Info */
+#home-info {
+  height: 400px;
+}
+
+#home-info .info-img {
+  float: left;
+  background: url('../img/small-side.jpg') no-repeat center/cover;
+  width: 50%;
+  height: 100%;
+}
+
+#home-info .info-content {
+  float: right;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  padding: 50px 30px;
+  overflow: hidden;
+}
+
+#home-info .info-content p {
+  padding-bottom: 30px;
+}
+
+/* features */
+.box {
+  /* see below --- even though we want horizontal, float left to make them go into a row  */
+  float: left;
+  width: 33.3%;
+  padding: 50px;
+  text-align: center;
+/* if dont put border box as border sizing at top, then padding will get added to width */
+}
+
+.box i {
+  margin-bottom: 10px;
+}
+
+/* About Info */
+
+#about-info .info-right {
+  float: right;
+  width: 50%;
+  min-height: 100%;
+}
+
+#about-info .info-right img {
+width: 50%;
+height: 290px;
+display: block;
+margin: auto;
+border-radius: 70%;
+}
+ 
+#about-info .info-left {
+  float: left;
+  width: 50%;
+  min-height: 100;
+}
+
+#testimonials {
+  height: 600px;
+  background: url('../img/pexels-rachel-claire-4577673.jpg') no-repeat center center/cover;
+  padding-top: 100px;
+}
+
+#testimonials h2 {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+#testimonials .testimonial {
+  padding: 20px;
+  margin-bottom: 40px; 
+  border-radius: 5px;
+  opacity: 0.9;
+}
+/* use border radius % to make an image rounded */
+#testimonials .testimonial img {
+  width: 100px;
+  height: 120px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* contact form */
+#contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px #ddd solid;
+}
+/* focus states are pseudo selector and can alter the border highlighter */
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+#contact-form textarea {
+  height: 200px;
+}
+/* footer */
+#main-footer {
+  text-align: center;
+  background: #444;
+  color: #fff;
+  padding: 20px;
+}
+
